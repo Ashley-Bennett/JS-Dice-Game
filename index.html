@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+    <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
 <body>
-    <button id="roll">Roll Die</button>
-    <button id="logScore">Log Score</button>
+
+    <div class="grid-main">
+        <p id="instructions">Roll the die to score the face value.
+             Reach 20 points to win. Score a 1 and you lose! Good luck.</p>
+        
+        <p id="score">Current score: 0</p>
+        <img id="die" src="./img/dice1.png">
+        <p id="roll">Roll Die</p>
+        <!-- <button id="logScore">Log Score</button>
+        <button id="logWins">Log Wins</button>
+        <button id="logLosses">Log Losses</button> -->
+
+    </div>
 
 <script src="script.js"></script>
 </body>

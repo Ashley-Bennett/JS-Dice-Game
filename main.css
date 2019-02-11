@@ -1,1 +1,35 @@
+body{
+    background: linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%);
+}
+
+.grid-main{
+    display: grid;
+    grid-template-columns: 
+    25% 50% 25%;
+    grid-template-rows:
+    15vh 70vh 15vh;
+    grid-template-areas:
+    "instructions instructions ."
+    "rollButton die score "
+    ". . . ";
+}
+
+#instructions{
+    grid-area: instructions
+}
+
+#die{
+    grid-area: die
+}
+
+
+#roll{
+    /* border-radius: 20%; */
+    border: 2px solid green;
+    grid-area: rollButton
+}
+
+#score {
+    grid-area: score
+}
 
