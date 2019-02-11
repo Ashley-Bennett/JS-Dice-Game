@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%);
+    background: linear-gradient(to bottom, #b3dced 0%,#29b8e5 50%,#bce0ee 100%);
 }
 
 .grid-main{
@@ -15,21 +15,45 @@ body{
 }
 
 #instructions{
-    grid-area: instructions
+    grid-area: instructions;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 24pt
 }
 
 #die{
+    align-self: center;
+    position: relative;
+    left: 36%;
+    /* margin: 50%; */
+    /* transform: translate(-50% -50%); */
     grid-area: die
 }
 
 
 #roll{
-    /* border-radius: 20%; */
-    border: 2px solid green;
-    grid-area: rollButton
+    background-color: #b3dced;
+    margin: 12%;
+    margin-top: 40%;
+    margin-bottom: 40%;
+    text-align: center;
+    border-radius: 20%;
+    border: 2px solid blue;
+    grid-area: rollButton;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 50pt;
+    padding-top: 20%;
 }
 
 #score {
-    grid-area: score
-}
+    grid-area: score;
+    background-color: #b3dced;
+    margin: 12%;
+    margin-top: 40%;
+    margin-bottom: 40%;
+    text-align: center;
+    border-radius: 20%;
+    border: 2px solid blue;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 38pt;
+    padding-top: 20%;}
 
