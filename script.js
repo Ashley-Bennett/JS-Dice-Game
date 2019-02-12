@@ -6,6 +6,30 @@ let displayScore = document.getElementById("score")
 let die = document.getElementById("die")
 let result = document.getElementById("result")
 let winTotal = document.getElementById("wins")
+let player1 = document.getElementById("player1")
+let grid = document.getElementsByClassName("grid-main")[0]
+
+player1.addEventListener("click", () => {
+    grid.style.display = "grid"
+    document.getElementById("mainMenu").style.display = "block"
+    document.getElementById("intro").style.display = "none"
+})
+
+document.getElementById("mainMenu").addEventListener("click", () => {
+    grid.style.display = "none"
+    document.getElementById("mainMenu").style.display = "none"
+    document.getElementById("intro").style.display = "block"
+    score = 0
+    wins = 0
+    losses = 0
+})
+
+// const mainMenu = () => {
+//     grid.style.display = "none"
+//     document.getElementById("mainMenu").style.display = "none"
+//     document.getElementById("intro").style.display = "block"
+    
+// }
 
 const roll = () => {
     die.classList.remove("dieactive")

@@ -3,8 +3,20 @@ body{
     background: linear-gradient(to bottom, #b3dced 0%,#29b8e5 50%,#bce0ee 100%);
 }
 
+#mainMenu{
+    display: none;
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    background-color: #b3dced;
+    border: 2px solid blue;
+    border-radius: 20%;
+    font-family: 'Titillium Web', sans-serif;
+
+}
+
 .grid-main{
-    display: grid;
+    display: none;
     grid-template-columns: 
     25% 50% 25%;
     grid-template-rows:
@@ -18,7 +30,7 @@ body{
 #instructions{
     grid-area: instructions;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 24pt
+    font-size: 3vw
 }
 
 #die{
@@ -68,7 +80,7 @@ body{
     border: 2px solid blue;
     grid-area: rollButton;
     font-family: 'Roboto Mono', monospace;
-    font-size: 6vw;
+    font-size: 5vw;
     padding-top: 10%;
     overflow: auto
 }
@@ -91,7 +103,7 @@ body{
     border-radius: 20%;
     border: 2px solid blue;
     font-family: 'Roboto Mono', monospace;
-    font-size: 4vw;
+    font-size: 3vw;
     padding-top: 10%;
     overflow: auto
 }
