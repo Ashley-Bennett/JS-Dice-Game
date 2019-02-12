@@ -1,4 +1,5 @@
 body{
+    user-select: none;
     background: linear-gradient(to bottom, #b3dced 0%,#29b8e5 50%,#bce0ee 100%);
 }
 
@@ -11,7 +12,7 @@ body{
     grid-template-areas:
     "instructions instructions ."
     "rollButton die score "
-    ". . . ";
+    "wins result result ";
 }
 
 #instructions{
@@ -24,9 +25,36 @@ body{
     align-self: center;
     position: relative;
     left: 36%;
+    /* transition: all 0.5s ease; */
     /* margin: 50%; */
     /* transform: translate(-50% -50%); */
     grid-area: die
+    
+}
+
+#die:hover{
+    cursor: pointer;
+}
+
+@keyframes scale {
+    0% {transform: rotate(0deg) scale(1)}
+    50% {transform: rotate(360deg) scale(2)}
+    100% {transform: rotate(720deg) scale(1)}
+}
+
+/* @keyframes rotate {
+    0% {transform: rotate(0deg)}
+    100% {transform: rotate(720deg)}
+} */
+
+.dieactive{
+    transform: rotate(720deg);
+    animation:  
+    /* rotate 1s linear, */
+    scale 1s linear;
+    /* animation: rotate 1s linear; */
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
 }
 
 
@@ -40,8 +68,17 @@ body{
     border: 2px solid blue;
     grid-area: rollButton;
     font-family: 'Roboto Mono', monospace;
-    font-size: 50pt;
-    padding-top: 20%;
+    font-size: 6vw;
+    padding-top: 10%;
+    overflow: auto
+}
+
+#roll:hover{
+    cursor: pointer;
+}
+
+#roll:active{
+    transform: scale(0.9)
 }
 
 #score {
@@ -54,6 +91,20 @@ body{
     border-radius: 20%;
     border: 2px solid blue;
     font-family: 'Roboto Mono', monospace;
-    font-size: 38pt;
-    padding-top: 20%;}
+    font-size: 4vw;
+    padding-top: 10%;
+    overflow: auto
+}
 
+#wins {
+    grid-area: wins;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 3vh;
+    margin: 0%;
+}
+
+#result {
+    grid-area: result;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 3vw;
+}

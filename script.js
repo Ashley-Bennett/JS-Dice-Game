@@ -2,13 +2,15 @@ let score = 0
 let wins = 0
 let losses = 0
 let rollButton = document.getElementById("roll");
-let logScore = document.getElementById("logScore")
-let logWins = document.getElementById("logWins")
-let logLosses = document.getElementById("logLosses")
 let displayScore = document.getElementById("score")
 let die = document.getElementById("die")
+let result = document.getElementById("result")
+let winTotal = document.getElementById("wins")
 
 const roll = () => {
+    die.classList.remove("dieactive")
+    void die.offsetWidth
+    die.classList.add("dieactive")
     let newScore = Math.ceil(Math.random() * 6 );
     console.log(newScore)
         if (newScore == 1){
@@ -45,26 +47,39 @@ const roll = () => {
 
 const checkScore = () => {
     if(score >= 20){
-        console.log("You Win")
+        // winTotal.textContent = 
+        // `Current wins: ${wins}` 
+        // `Current losses: ${losses}`
+        // `W/L Ratio: ${ratio}`
+        result.textContent = `Congratulations, you won. +1 to total wins`
         wins ++
         score = 0
+    } else if (score == 0){
+        // winTotal.textContent =
+        // `Current wins: ${wins}`
+        // `Current losses: ${losses}`
+        // `W/L Ratio: ${ratio}`;
+        result.textContent = `You rolled a 1, start over`;
+        score = 0;
+    } else {
+        // winTotal.textContent =
+        // `Current wins: ${wins}`
+        // `Current losses: ${losses}`
+        // `W/L Ratio: ${ratio}`;
+        result.textContent = ``;
     }
+    let ratio = (Math.floor((wins / losses)*100)/100)
+    winTotal.innerHTML =
+    `Current wins: ${wins}<br> Current losses: ${losses}<br>W/L Ratio: ${ratio}`
+    // let ratio = (wins / losses)
 }
+
+
 
 const updateScore = () => {
     displayScore.textContent = `Current score: ${score}`
+    // die.classList.remove("dieactive")
 }
 
 rollButton.addEventListener("click", (roll))
-
-logScore.addEventListener("click", () => {
-    console.log(score)
-})
-
-logWins.addEventListener("click", () => {
-    console.log(wins)
-})
-
-logLosses.addEventListener("click", () => {
-    console.log(losses)
-})
+die.addEventListener("click", (roll))
