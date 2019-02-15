@@ -5,6 +5,68 @@ body{
 
 #intro{
     display: grid;
+    grid-template-columns:
+    33vw 33vw 33vw;
+    grid-template-rows:
+    33vh 33vh 33vh;
+    grid-template-areas:
+    "text text text"
+    ". a ."
+    ". b ."
+
+}
+
+#introText{
+    grid-area: text;
+    align-self: center;
+    justify-self: center;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 13vw;
+    overflow: auto;
+
+    color: white;
+    text-shadow:
+        3px 3px 0 #000,
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+       -1px 1px 0 #000,
+        1px 1px 0 #000;
+
+
+}
+
+#player1{
+    grid-area: a;
+    align-self: center;
+    justify-self: center;
+    background-color: #b3dced;
+    border: 2px solid blue;
+    border-radius: 20%;
+    width: 80%;
+    height: 80%;
+    font-size: 4.5vw;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    overflow: auto;
+    margin: auto;
+    
+
+}
+
+#player2{
+    grid-area: b;
+    align-self: center;
+    justify-self: center;
+    background-color: #b3dced;
+    border: 2px solid blue;
+    border-radius: 20%;
+    width: 80%;
+    height: 80%;
+    font-size: 5vw;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    overflow: auto
+
 }
 
 #mainMenu{
@@ -44,7 +106,9 @@ body{
     /* transition: all 0.5s ease; */
     /* margin: 50%; */
     /* transform: translate(-50% -50%); */
-    grid-area: die
+    grid-area: die;
+    border-radius: 7%;
+    border: 4px solid black;
     
 }
 
@@ -152,6 +216,8 @@ body{
     grid-area: die1;
     justify-self: center;
     align-self: center;
+    border-radius: 7%;
+    border: 4px solid black;
 }
 
 #player1Die:hover{
@@ -159,13 +225,16 @@ body{
 }
 
 .dieTurn{
-    box-shadow: 10px 10px 5px grey;
+    box-shadow: 0px 0px 40px 20px #F7E31B;
+    /* box-shadow: 10px 10px 5px grey; */
 }
 
 #player2Die{
     grid-area: die2;
     justify-self: center;
     align-self: center;
+    border-radius: 7%;
+    border: 4px solid black;
 }
 
 #player2Die:hover{
@@ -191,9 +260,13 @@ body{
 }
 
 #winsM{
-    grid-area: winsM
+    grid-area: winsM;
+    font-family: 'Titillium Web', sans-serif;
+
 }
 
 #resultM{
-    grid-area: resultM
+    grid-area: resultM;
+    font-family: 'Titillium Web', sans-serif;
+
 }
