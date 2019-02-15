@@ -132,7 +132,8 @@ body{
     "instructionsM instructionsM . ."
     ". die1 die2 ."
     ". score1 score2 ."
-    "winsM resultM resultM ."
+    "winsM resultM resultM .";
+    gap: 15px
 
 
 }
@@ -142,22 +143,42 @@ body{
 }
 
 #player1Die{
-    grid-area: die1
+    grid-area: die1;
+    /* width: 80%;
+    height: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #player2Die{
-    grid-area: die2
+    grid-area: die2;
+    width: 80%;
+    height: auto;
 }
 
 #score1{
     grid-area: score1;
     border: 2px solid blue;
+    border-radius: 20%;
+    background-color: #b3dced;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+
+
 
 }
 
 #score2{
     grid-area: score2;
     border: 2px solid blue;
+    border-radius: 20%;
+    background-color: #b3dced;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+
+
+
 
 }
 

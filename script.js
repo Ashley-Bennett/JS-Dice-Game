@@ -7,16 +7,21 @@ let die = document.getElementById("die")
 let result = document.getElementById("result")
 let winTotal = document.getElementById("wins")
 let player1 = document.getElementById("player1")
+let player2 = document.getElementById("player2")
 let grid = document.getElementsByClassName("grid-main")[0]
+let grid2 = document.getElementsByClassName("grid-2")[0]
 
 player1.addEventListener("click", () => {
     grid.style.display = "grid"
+    grid2.style.display = "none"
     document.getElementById("mainMenu").style.display = "block"
     document.getElementById("intro").style.display = "none"
 })
 
+
 document.getElementById("mainMenu").addEventListener("click", () => {
     grid.style.display = "none"
+    grid2.style.display = "none"
     document.getElementById("mainMenu").style.display = "none"
     document.getElementById("intro").style.display = "block"
     score = 0
@@ -107,3 +112,125 @@ const updateScore = () => {
 
 rollButton.addEventListener("click", (roll))
 die.addEventListener("click", (roll))
+
+
+//multiplayer
+let die1 = document.getElementById("player1Die")
+let die2 = document.getElementById("player2Die")
+let displayScore1 = document.getElementById("score1")
+let score1 = 0
+let displayScore2 = document.getElementById("score2")
+let score2 = 0
+let wins1 = 0
+
+const roll1 = () => {
+    die1.classList.remove("dieactive")
+    void die1.offsetWidth
+    die1.classList.add("dieactive")
+    let newScore = Math.ceil(Math.random() * 6 );
+    console.log(newScore)
+        if (newScore == 1){
+            console.log("You lose")
+            score1 = 0
+            die1.src="./img/dice1.png"
+        } else if (newScore == 2){
+            console.log("you scored 2")
+            score1 += 2
+            die1.src="./img/dice2.png"
+        } else if (newScore == 3){
+            console.log("you scored 3")
+            score1 += 3
+            die1.src="./img/dice3.png"
+        } else if (newScore == 4){
+            console.log("you scored 4")
+            score1 += 4
+            die1.src="./img/dice4.png"
+        } else if (newScore == 5){
+            console.log("you scored 5")
+            score1 += 5
+            die1.src="./img/dice5.png"
+        } else if (newScore == 6){
+            console.log("you scored 6")
+            score1 += 6
+            score2 = 0
+            die1.src="./img/dice6.png"
+        } else{
+            console.log("broken")
+        }
+    checkScore1()
+    updateScore1()
+}
+
+const checkScore1 = () => {
+    if(score1 >= 20){
+        score1 = 0
+        score2 = 0
+    }
+}
+
+const updateScore1 = () => {
+    displayScore1.innerHTML = `Current score:<br> ${score1}`
+    displayScore2.innerHTML = `Current score:<br> ${score2}`
+}
+
+die1.addEventListener("click",(roll1))
+
+const roll2 = () => {
+    die2.classList.remove("dieactive")
+    void die2.offsetWidth
+    die2.classList.add("dieactive")
+    let newScore = Math.ceil(Math.random() * 6 );
+    console.log(newScore)
+        if (newScore == 1){
+            console.log("You lose")
+            score2 = 0
+            die2.src="./img/dice1.png"
+        } else if (newScore == 2){
+            console.log("you scored 2")
+            score2 += 2
+            die2.src="./img/dice2.png"
+        } else if (newScore == 3){
+            console.log("you scored 3")
+            score2 += 3
+            die2.src="./img/dice3.png"
+        } else if (newScore == 4){
+            console.log("you scored 4")
+            score2 += 4
+            die2.src="./img/dice4.png"
+        } else if (newScore == 5){
+            console.log("you scored 5")
+            score2 += 5
+            die2.src="./img/dice5.png"
+        } else if (newScore == 6){
+            console.log("you scored 6")
+            score2 += 6
+            score1 = 0
+            die2.src="./img/dice6.png"
+        } else{
+            console.log("broken")
+        }
+    checkScore2()
+    updateScore2()
+}
+
+const checkScore2 = () => {
+    if(score2 >= 20){
+        score1 = 0
+        score2 = 0
+    }
+}
+
+const updateScore2 = () => {
+    displayScore1.innerHTML = `Current score:<br> ${score1}`
+    displayScore2.innerHTML = `Current score:<br> ${score2}`
+}
+
+die2.addEventListener("click",(roll2))
+
+player2.addEventListener("click", () => {
+    grid.style.display = "none"
+    grid2.style.display = "grid"
+    document.getElementById("mainMenu").style.display = "block"
+    document.getElementById("intro").style.display = "none"
+})
+
