@@ -27,10 +27,10 @@ body{
     "wins result result ";
 }
 
-#instructions{
+.instructions{
     grid-area: instructions;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 3vw
+    font-size: 5vh
 }
 
 #die{
@@ -63,7 +63,7 @@ body{
     transform: rotate(720deg);
     animation:  
     /* rotate 1s linear, */
-    scale 1s linear;
+    scale 0.5s linear;
     /* animation: rotate 1s linear; */
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 
@@ -73,15 +73,15 @@ body{
 #roll{
     background-color: #b3dced;
     margin: 12%;
-    margin-top: 40%;
-    margin-bottom: 40%;
+    margin-top: 30vh;
+    margin-bottom: 30vh;
     text-align: center;
     border-radius: 20%;
     border: 2px solid blue;
     grid-area: rollButton;
     font-family: 'Roboto Mono', monospace;
-    font-size: 5vw;
-    padding-top: 10%;
+    font-size: 5vh;
+    padding-top: 1vh;
     overflow: auto
 }
 
@@ -97,14 +97,14 @@ body{
     grid-area: score;
     background-color: #b3dced;
     margin: 12%;
-    margin-top: 40%;
-    margin-bottom: 40%;
+    margin-top: 25vh;
+    margin-bottom: 25vh;
     text-align: center;
     border-radius: 20%;
     border: 2px solid blue;
     font-family: 'Roboto Mono', monospace;
-    font-size: 3vw;
-    padding-top: 10%;
+    font-size: 5vh;
+    padding-top: 1vh;
     overflow: auto
 }
 
@@ -119,4 +119,52 @@ body{
     grid-area: result;
     font-family: 'Titillium Web', sans-serif;
     font-size: 3vw;
+}
+
+
+.grid-2{
+    display: grid;
+    grid-template-columns:
+    25vw 25vw 25vw 25vw;
+    grid-template-rows:
+    15vh 45vh 15vh 25vh;
+    grid-template-areas:
+    "instructionsM instructionsM . ."
+    ". die1 die2 ."
+    ". score1 score2 ."
+    "winsM resultM resultM ."
+
+
+}
+
+#instructions2{
+    grid-area: instructionsM
+}
+
+#player1Die{
+    grid-area: die1
+}
+
+#player2Die{
+    grid-area: die2
+}
+
+#score1{
+    grid-area: score1;
+    border: 2px solid blue;
+
+}
+
+#score2{
+    grid-area: score2;
+    border: 2px solid blue;
+
+}
+
+#winsM{
+    grid-area: winsM
+}
+
+#resultM{
+    grid-area: resultM
 }
