@@ -3,6 +3,10 @@ body{
     background: linear-gradient(to bottom, #b3dced 0%,#29b8e5 50%,#bce0ee 100%);
 }
 
+#intro{
+    display: grid;
+}
+
 #mainMenu{
     display: none;
     position: absolute;
@@ -27,7 +31,7 @@ body{
     "wins result result ";
 }
 
-.instructions{
+#instructions1{
     grid-area: instructions;
     font-family: 'Titillium Web', sans-serif;
     font-size: 5vh
@@ -123,13 +127,13 @@ body{
 
 
 .grid-2{
-    display: grid;
+    display: none;
     grid-template-columns:
     25vw 25vw 25vw 25vw;
     grid-template-rows:
     15vh 45vh 15vh 25vh;
     grid-template-areas:
-    "instructionsM instructionsM . ."
+    "instructionsM instructionsM instructionsM ."
     ". die1 die2 ."
     ". score1 score2 ."
     "winsM resultM resultM .";
@@ -139,22 +143,33 @@ body{
 }
 
 #instructions2{
-    grid-area: instructionsM
+    grid-area: instructionsM;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 4vh
 }
 
 #player1Die{
     grid-area: die1;
-    /* width: 80%;
-    height: auto; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-self: center;
+    align-self: center;
+}
+
+#player1Die:hover{
+    cursor: pointer;
+}
+
+.dieTurn{
+    box-shadow: 10px 10px 5px grey;
 }
 
 #player2Die{
     grid-area: die2;
-    width: 80%;
-    height: auto;
+    justify-self: center;
+    align-self: center;
+}
+
+#player2Die:hover{
+    cursor: pointer;
 }
 
 #score1{
@@ -164,9 +179,6 @@ body{
     background-color: #b3dced;
     font-family: 'Roboto Mono', monospace;
     text-align: center;
-
-
-
 }
 
 #score2{
@@ -176,10 +188,6 @@ body{
     background-color: #b3dced;
     font-family: 'Roboto Mono', monospace;
     text-align: center;
-
-
-
-
 }
 
 #winsM{
